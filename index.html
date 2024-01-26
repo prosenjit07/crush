@@ -45,8 +45,20 @@
 <div class="paper">
 <p class="p1">Drag the papers to move!</p>
 </div>
-<!-- partial -->
-  <script  src="./mobile.js"></script>
+
+
+<script>
+  var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+  if (!isMobile) {
+     var script = document.createElement('script');
+     script.src = './script.js';
+     document.body.appendChild(script);
+  } else {
+     var script = document.createElement('script');
+     script.src = './mobile.js';
+     document.body.appendChild(script);
+  }
+ </script>
 
 </body>
 </html>
